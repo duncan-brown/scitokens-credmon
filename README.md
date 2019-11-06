@@ -173,7 +173,7 @@ SEC_CREDENTIAL_PRODUCER = /usr/bin/scitokens_credential_producer
 # LOCAL_CREDMON_KEY_ID = key-es356
 ```
 
-(#docker-continer-setup)
+## Docker Container Setup
 
 We assume that this container is running with the hostname `schedd.client.address`
 Register the client with a Scitokens server. When registering this client, the callback URL should be
@@ -183,7 +183,7 @@ https://schedd.client.address:443/return/scitokens
 
 Record the values of client ID and client secret provided by the server and use them to set the build arguments below.
 
-## Build the Docker image
+### Build the Docker image
 
 Obtain an X509 host certificate and key pair and put them in the directory
 `docker` in this repository. Then build the image with:
@@ -197,7 +197,7 @@ docker build \
   --rm -t scitokens/htcondor-submit .
 ```
 
-## Run the Docker image
+### Run the Docker image
 
 Edit `docker-compose.yml` to set the `hostname` and `domainname` to be the name of the machine on which this container will run so that it is visible from the outside world.
 
